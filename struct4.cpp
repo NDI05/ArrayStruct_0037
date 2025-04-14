@@ -15,28 +15,34 @@ struct Player {
 };
 
 int main(){
-    Player pl;
+    Player pl[3];
     cout << "==================================" << endl;
-    cout << "=====Input&Output Data Struct======" << endl;
+    cout << "=====Input&Output Data Struct=====" << endl;
     cout << "==================================" << endl;
     // input data to struct
-    cout << "Masukkan Nama Player : ";
-    getline(cin, pl.name);
-    cout << "Masukkan ID Player : ";
-    cin >> pl.id;
-    cout << "Masukkan Level Player : ";
-    cin >> pl.level;
-    cin.ignore();
-    cout << "Masukkan Nama Weapon : ";
-    getline(cin, pl.wp.name);
-    cout << "Masukkan Damage Weapon : ";
-    cin >> pl.wp.damage;
+    for(int i=0; i < 3; i++){
+        cout << "Masukkan Nama Player : ";
+        getline(cin, pl[i].name);
+        cout << "Masukkan ID Player : ";
+        cin >> pl[i].id;
+        cout << "Masukkan Level Player : ";
+        cin >> pl[i].level;
+        cin.ignore();
+        cout << "Masukkan Nama Weapon : ";
+        getline(cin, pl[i].wp.name);
+        cout << "Masukkan Damage Weapon : ";
+        cin >> pl[i].wp.damage;
+        cout << "====================================" << endl;
+        cin.ignore();
+    }
     // output data struct
-    cout << "=========Output Data Struct========" << endl;
-    cout << "Nama Player : " << pl.name << endl;
-    cout << "ID Player : " << pl.id << endl;
-    cout << "Level Player : " << pl.level << endl;
-    cout << "Nama Weapon Player : " << pl.wp.name << endl;
-    cout << "Damage Weapon Player : " << pl.wp.damage << endl;
-    cout << "====================================" << endl;
+    cout << "=========Output Data Struct=========" << endl;
+    for (int i=0; i < 3; i++){
+        cout << "Nama Player : " << pl[i].name << endl;
+        cout << "ID Player : " << pl[i].id << endl;
+        cout << "Level Player : " << pl[i].level << endl;
+        cout << "Nama Weapon Player : " << pl[i].wp.name << endl;
+        cout << "Damage Weapon Player : " << pl[i].wp.damage << endl;
+        cout << "====================================" << endl;
+    }
 }
